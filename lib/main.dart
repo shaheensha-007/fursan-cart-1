@@ -2,9 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Ui/home.dart';
+import 'package:fursancart/Ui/slider1.dart';
+
 
 import 'Bloc/signup_block/signup_bloc.dart';
 import 'Ui/openpage.dart';
+final String basePath = 'http://192.168.1.14:3010/api';
 
 void main() {
   runApp(const MyApp());
@@ -27,8 +30,8 @@ class MyApp extends StatelessWidget {
 
               primarySwatch: Colors.blue,
             ),
-            home: Slider(value: null,)
-          ),
-        );
+            home: Openpage()
+            ),
+          );
   }
 }

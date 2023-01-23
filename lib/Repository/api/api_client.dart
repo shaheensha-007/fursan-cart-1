@@ -3,13 +3,14 @@ import 'dart:developer';
 
 import 'package:http/http.dart';
 
+import '../../main.dart';
 import 'api_exception.dart';
 
 
 class ApiClient {
 
-  static final String basePath = 'http://fursancart.rootsys.in/api';
-  String token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGN6djhkNzIwMDAxenJ5dW9icmJ1cjhyIiwiZW1haWwiOiJzZXZtcGlvQGdtYWlsLmNvbXR5YyIsImlhdCI6MTY3MzkzNzYwOCwiZXhwIjoxNjc0NTQyNDA4fQ.LoTt9kGoVAf2WUkzOiD8GV-tJeI2UtMTBUC0k7ADqmI";
+
+  String token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGQ4ZmM2aWwwMDFvenIzdmd6NDQ5N2V1IiwiZW1haWwiOiJzZXZtcGlvQGdtYWlsLmNvbXR5Y2tpa3VqaiIsImlhdCI6MTY3NDQ1NTEwOCwiZXhwIjoxNjc1MDU5OTA4fQ.rkRsyUI1ANuBSzdZ3BlgCP_tmqIFv-irySF2Rt2EYp8";
 
 
 
@@ -27,7 +28,7 @@ class ApiClient {
 
     switch (method) {
       case "POST":
-        response = await post(Uri.parse(url), headers: {'content-Type': 'application/x-www-form-urlencoded',}, body: body);
+        response = await post(Uri.parse(url), headers: {'content-Type': 'application/x-www-form-urlencoded','Authorization':token}, body: body);
         break;
       case "PUT":
         response = await put(Uri.parse(url), headers: {'content-Type': 'application/json',}, body: body);
