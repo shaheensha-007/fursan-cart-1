@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../Repository/api/welcome_repository/welcomeApi.dart';
+import '../../Repository/api/SliderApi.dart';
 import '../../Repository/modelclass/usermodel.dart';
 
 part 'welcome_event.dart';

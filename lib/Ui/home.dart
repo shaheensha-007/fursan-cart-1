@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fursancart/Ui/slider1.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -75,7 +76,10 @@ class _HomeState extends State<Home> {
     ),
     ),
       Container(
-        height: 0.200,
+        height: mheight*0.200,
+        width: mwidth*0.85,
+        child: Slider1(),
+
       )    
     ],
     )

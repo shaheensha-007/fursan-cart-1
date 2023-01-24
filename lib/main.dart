@@ -7,7 +7,7 @@ import 'package:fursancart/Ui/slider1.dart';
 
 import 'Bloc/signup_block/signup_bloc.dart';
 import 'Ui/openpage.dart';
-final String basePath = 'http://192.168.1.14:3010/api';
+final String basePath = 'http://192.168.1.7:3010/api';
 
 void main() {
   runApp(const MyApp());

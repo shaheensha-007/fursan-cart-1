@@ -5,7 +5,8 @@ import 'package:fursancart/Repository/modelclass/usermodel.dart';
 import 'package:http/http.dart';
 
 
-import '../api_client.dart';
+
+import '../../api_clinent.dart';
 
 
 class WelcomeApi {

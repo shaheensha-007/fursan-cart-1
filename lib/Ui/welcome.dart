@@ -28,53 +28,53 @@ class _WelcomeState extends State<Welcome> {
   @override
   Widget build(BuildContext context) {
     RegExp regex = RegExp(pattern);
-    BlocListener<WelcomeBloc, WelcomeState>(
-      listener: (context, state) {
-        if (state is welcomeblocLoaded) {
-          print('loaded');
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (a) =>  Home()));
-        }
-        if (state is welcomeblocLoading) {
-          print('loding');
-          showDialog(context: context,
-              builder: (BuildContext a) =>
-                  AlertDialog(
-                    content: Container(
-                      width: 30,
-                      height: 20,
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          CircularProgressIndicator(),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          Text("please wait", style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.w400),)
-                        ],
-                      ),
-                    ),
-                    title: Center(child: Text("loading"),),
-                  ));
-        }
-        if (state is welcomeblocError) {
-          Navigator.of(context).pop();
-          ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text("Already registered")));
-        }
-      },
-    );
-    MediaQuery
+
+   var mheight= MediaQuery
         .of(context)
         .size
         .height;
-    MediaQuery
+   var mwidth= MediaQuery
         .of(context)
         .size
         .width;
-    return Scaffold(resizeToAvoidBottomInset: false,
+    return BlocListener<WelcomeBloc, WelcomeState>(
+  listener: (context, state) {   if (state is welcomeblocLoaded) {
+    print('loaded');
+    Navigator.of(context).push(
+        MaterialPageRoute(builder: (a) =>  Home()));
+  }
+  if (state is welcomeblocLoading) {
+    print('loding');
+    showDialog(context: context,
+        builder: (BuildContext a) =>
+            AlertDialog(
+              content: Container(
+                width: mwidth*0.3,
+                height: mheight*0.1,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    CircularProgressIndicator(),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text("please wait", style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.w400),)
+                  ],
+                ),
+              ),
+              title: Center(child: Text("loading"),),
+            ));
+  }
+  if (state is welcomeblocError) {
+    Navigator.of(context).pop();
+    ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Already registered")));
+  }
+    // TODO: implement listener
+  },
+  child: Scaffold(resizeToAvoidBottomInset: false,
         backgroundColor: Colors.white,
         body: Form(
           child: Container(
@@ -227,7 +227,8 @@ class _WelcomeState extends State<Welcome> {
     ),
         ),
 
-    );
+    ),
+);
 
     }
   }

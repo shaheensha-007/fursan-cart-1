@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../Repository/api/Signup_repository/signupApi..dart';
+import '../../Repository/api/email_login/Signup_repository/signupApi..dart';
 import '../../Repository/modelclass/usermodel.dart';
 
 part 'signup_event.dart';

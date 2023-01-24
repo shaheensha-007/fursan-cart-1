@@ -30,21 +30,20 @@ class _LetstartState extends State<Letstart> {
 
   @override
   Widget build(BuildContext context) {
+    var mheight=MediaQuery.of(context).size.height;
+    var mwidth=MediaQuery.of(context).size.width;
     RegExp regex = RegExp(pattern);
-    BlocListener<SignupBloc, SignupState>(
+    return BlocListener<SignupBloc, SignupState>(
       listener: (context, state) {
-        if(state is SignupblocLoaded){
-          print('loaded');
-          Navigator.of(context).push(MaterialPageRoute(builder: (context)=>Home()));
-        }
+
         if (state is SignupblocLoading){
 
           print('loding');
           showDialog(context: context,
         builder: (BuildContext a)=>AlertDialog(
         content: Container(
-        width: 30,
-        height: 20,
+        width: mwidth*0.3,
+        height:mheight*0.1 ,
         child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -58,14 +57,16 @@ class _LetstartState extends State<Letstart> {
         ),
         title: Center(child: Text("loading"),),
         ));
+        }  if(state is SignupblocLoaded){
+          print('loaded');
+          Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext a)=>Home()));
         }
         if(state is SignupblocError){
           Navigator.of(context).pop();
           ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:Text("Already registered")));
         }
       },
-    );
-    return Scaffold(resizeToAvoidBottomInset: false,
+    child: Scaffold(resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: Container(
         height: MediaQuery
@@ -224,6 +225,6 @@ class _LetstartState extends State<Letstart> {
         ),
     ),
 
-    );
+    ));
   }
 }
