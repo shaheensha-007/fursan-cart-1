@@ -33,11 +33,11 @@ class _Slider1State extends State<Slider1> {
               index,
               realindex,
             ) {
-              var height = mheight * 0.200;
-              var width = mwidth * 0.85;
+              var height = mheight * 0.250;
+              var width = mwidth*0.99;
               return Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(17),
+                    borderRadius: BorderRadius.circular(30),
                   ),
                   width: width,
                   height: height,

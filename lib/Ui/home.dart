@@ -52,6 +52,7 @@ class _HomeState extends State<Home> {
           ]
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
             height: mheight*0.02,
@@ -75,12 +76,75 @@ class _HomeState extends State<Home> {
     borderRadius: BorderRadius.circular(8),
     ),
     ),
+      SizedBox(
+        height: mheight*0.02,
+      ),
       Container(
-        height: mheight*0.200,
-        width: mwidth*0.85,
+        height: mheight*0.250,
+        width: mwidth*0.9,
+        decoration:BoxDecoration(borderRadius: BorderRadius.circular(17)),
         child: Slider1(),
+      ),
+      SizedBox(
+        height: mheight*0.02,
+      ),
+      Padding(
+        padding: const EdgeInsets.only(right:230),
+        child: Text("Choose Brand",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w300,color: Color(0xff000000,
+        )),),
+      ),
+          SizedBox(
+            height:mheight*0.02,
+          ),
+       Container(
+         height: mheight*0.10,
+         width: mwidth,
+         child: ListView(
+           scrollDirection:Axis.horizontal,
+           children: [
+             Padding(
+               padding: const EdgeInsets.only(left: 20),
+               child: Container(
+                   height: mheight*0.20,
+                   width: mwidth*0.20,
+                   color: Colors.red,
+                 ),
+             ),
+             SizedBox(
+               width: mwidth*0.03,
+             ),
+             Container(
+               height: mheight*0.20,
+               width: mwidth*0.20,
+               color: Colors.red,
+             ),
+             SizedBox(
+               width:mwidth*0.03 ,
+             ),
+             Container(
+               height: mheight*0.20,
+               width: mwidth*0.20,
+               color: Colors.red,
+             ),
+             SizedBox(
+               width: mwidth*0.03,
+             ),
+             Container(
+               height: mheight*0.20,
+               width: mwidth*0.20,
+               color: Colors.red,
+             ),
+           ],
 
-      )    
+         ),
+       ),
+          SizedBox(
+            height: mheight*0.02,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(right: 220),
+            child: Text("Tranding Now",style: TextStyle(fontWeight: FontWeight.w300,fontSize: 20,color: Color(0xff000000,)),),
+          )
     ],
     )
     ,
