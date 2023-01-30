@@ -4,22 +4,21 @@ import 'dart:convert';
 import 'package:fursancart/Repository/modelclass/usermodel.dart';
 import 'package:http/http.dart';
 
+import '../modelclass/homemodelclass.dart';
 import 'api_clinent.dart';
 
 
-class WelcomeApi {
+class SliderApi {
 
 
   ApiClient  apiClient = ApiClient();
-  String trendingpath = '/auth/local/user/login';
+  String trendingpath = 'banner/all';
 
 
-  Future<Usermodel> login(String email,String password) async {
-    var boby = {"email":email,"password": password};
-    print(boby);
-    Response response = await apiClient.invokeAPI(trendingpath, 'POST', boby);
+  Future <List<Homemodelclass>> slider() async {
+    Response response = await apiClient.invokeAPI(trendingpath, 'GET',null);
     print(response.body);
-    return Usermodel.fromJson(jsonDecode(response.body));
+    return Homemodelclass .listFromJson(jsonDecode(response.body));
   }
 
 }

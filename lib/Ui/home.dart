@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fursancart/Ui/slider1.dart';
+import 'package:fursancart/Ui/trading_now.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -165,7 +166,10 @@ class _HomeState extends State<Home> {
                     width: mwidth*0.40,
                   ),
 
-                  GestureDetector(onTap:() {}, child:Text("see all",style: TextStyle(fontSize: 20,color: Color(0xff000000)),
+                  GestureDetector(onTap:() {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Trading_now()));
+                    },
+                      child:Text("see all",style: TextStyle(fontSize: 20,color: Color(0xff000000)),
                   )
                   ),
                 ],

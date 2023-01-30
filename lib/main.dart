@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
+import 'package:fursancart/Ui/bottomnavigationbar.dart';
 import 'package:fursancart/Ui/home.dart';
 import 'package:fursancart/Ui/slider1.dart';
 
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
 
               primarySwatch: Colors.blue,
             ),
-            home: Openpage()
+            home: Bottomnavigationbar()
             ),
           );
   }
