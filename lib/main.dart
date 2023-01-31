@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Ui/bottomnavigationbar.dart';
 import 'package:fursancart/Ui/home.dart';
@@ -8,7 +9,8 @@ import 'package:fursancart/Ui/slider1.dart';
 
 import 'Bloc/signup_block/signup_bloc.dart';
 import 'Ui/openpage.dart';
-final String basePath = 'http://192.168.1.7:3010/api';
+final String basePath = 'http://fursancart.rootsys.in/api';
+
 
 void main() {
   runApp(const MyApp());
@@ -23,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
             BlocProvider(create: (context) => SignupBloc()),
             BlocProvider(create: (context)=> WelcomeBloc()),
+            BlocProvider(create: (context)=>SliderBloc()),
     ],
           child: MaterialApp(
             title: 'Flutter Demo',

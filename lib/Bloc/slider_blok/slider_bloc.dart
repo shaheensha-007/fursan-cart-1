@@ -11,7 +11,8 @@ part 'slider_event.dart';
 part 'slider_state.dart';
 
 class SliderBloc extends Bloc<SliderEvent, SliderState> {
-  late List<Homemodelclass> homemodelclass;
+  late List<Homemodelclass> homemodelclass; late List<Homemodelclass> bestoffer;
+  late List<Homemodelclass> slider;
   SliderApi sliderApi=SliderApi();
   SliderBloc() : super(SliderInitial()) {
     on<FetchSliderEvent>((event, emit) async{
@@ -20,7 +21,8 @@ class SliderBloc extends Bloc<SliderEvent, SliderState> {
       print('loading');
       try{
   homemodelclass=await sliderApi.slider();
-  homemodelclass=homemodelclass.where((element) => null).toList();
+  slider=homemodelclass.where((element) => element.tag==null).toList();
+  bestoffer=homemodelclass.where((element) => element.tag==null).toList();
         emit(SliderblocLoaded());
         print('loaded');
       } catch(e){
