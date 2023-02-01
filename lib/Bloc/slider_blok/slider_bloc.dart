@@ -22,7 +22,7 @@ class SliderBloc extends Bloc<SliderEvent, SliderState> {
       try{
   homemodelclass=await sliderApi.slider();
   slider=homemodelclass.where((element) => element.tag==null).toList();
-  bestoffer=homemodelclass.where((element) => element.tag==null).toList();
+  bestoffer=homemodelclass.where((element) => element.tag!=null).toList();
         emit(SliderblocLoaded());
         print('loaded');
       } catch(e){

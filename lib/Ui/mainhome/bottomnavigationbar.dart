@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:fursancart/Ui/accounts.dart';
-import 'package:fursancart/Ui/home.dart';
-import 'package:fursancart/Ui/order.dart';
-import 'package:fursancart/Ui/trading_now.dart';
+import 'package:fursancart/Ui/mainhome/home.dart';
+import 'package:fursancart/Ui/mainhome/order.dart';
+import 'package:fursancart/Ui/mainhome/trading_now.dart';
+
+import 'accounts.dart';
 
 class Bottomnavigationbar extends StatefulWidget {
   const Bottomnavigationbar({Key? key}) : super(key: key);

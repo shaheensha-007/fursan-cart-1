@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:fursancart/Ui/slider1.dart';
-import 'package:fursancart/Ui/trading_now.dart';
+import 'package:fursancart/Ui/mainhome/lg%20_company.dart';
+import 'package:fursancart/Ui/mainhome/slider1.dart';
+import 'package:fursancart/Ui/mainhome/trading_now.dart';
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -141,12 +142,17 @@ class _HomeState extends State<Home> {
                SizedBox(
                  width: mwidth*0.03,
                ),
-               Container(
-                 height: mheight*0.20,
-                 width: mwidth*0.20,
-                 decoration: BoxDecoration(
-                   image: DecorationImage(image: AssetImage("assets/mi logo.png"),
-                   fit: BoxFit.cover,)
+               GestureDetector(
+                 onTap: (){  Navigator.push(context, MaterialPageRoute(builder: (context)=>Lg_company()));},
+                 child: Container(
+                   height: mheight*0.20,
+                   width: mwidth*0.20,
+                   decoration: BoxDecoration(
+                     image: DecorationImage(image: AssetImage("assets/mi logo.png"),
+                     fit: BoxFit.cover,)
+
+                   ),
+
                  ),
                ),
              ],
@@ -275,8 +281,14 @@ class _HomeState extends State<Home> {
                             height: mheight*0.12,
                             width: mwidth*0.35,
                             decoration: BoxDecoration(color: Color(0xffEFEEEE),
-                                image: DecorationImage(image: AssetImage("assets/TV-PNG-HD-Quality 1.png"))
+                                image: DecorationImage(image: AssetImage("assets/image 7 (1).png"))
                             ),
+                          ),
+                          Container(
+                            height: mheight*0.02,
+                            width: mwidth*0.25,
+                            color: Colors.red,
+                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
                           ),
                           Container(
                             height: mheight*0.08,

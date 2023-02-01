@@ -10,7 +10,7 @@ import 'api_exception.dart';
 class ApiClient {
 
 
-  String token = "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGRqeGd0eHgwMGVhenJzNmg1czB0MnNiIiwiZW1haWwiOiJzZXZtcGloaGZoZ29AZ21haWwuY29tdHljIiwiaWF0IjoxNjc1MTUwNjg3LCJleHAiOjE2NzU3NTU0ODd9.i5ULkTF5jb3gYl37XBz5cZI2bOCW1M7BC8S4GHWEcso";
+  String token = "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGRsYmRxbWgwMGVwenJzNm1zcDVzdHpqIiwiZW1haWwiOiJzZXZtcGlvb29AZ21haWwuY29tdHljIiwiaWF0IjoxNjc1MjM0NTIyLCJleHAiOjE2NzU4MzkzMjJ9.CbmCi3QqAAuo4hm8qELJ0CdBo8mR7IrFZfwl5xMAb-s";
 
   Future<Response> invokeAPI(String path, String method, Object? body) async {
     Map<String, String> headerParams = {
@@ -42,7 +42,7 @@ class ApiClient {
         break;
       case "GET_":
         response = await get(Uri.parse(url), headers: { 'Accept': 'application/json','Content-Type': 'application/json','Authorization': token,},
-          body: body,);
+        );
         break;
       default:
         response = await get(Uri.parse(url), headers: {

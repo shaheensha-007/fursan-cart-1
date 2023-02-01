@@ -61,8 +61,8 @@ class _Slider1State extends State<Slider1> {
                     ),
                     width: width,
                     height: height,
-                    child: Image.asset(
-                      basePath + "/banner/images/",
+                    child: Image.network(
+                      basePath + "/banner/images/571ad649fce4056b.jpg1675237795766-789118031.jpg",
                       fit: BoxFit.cover,
                     ));
               },
