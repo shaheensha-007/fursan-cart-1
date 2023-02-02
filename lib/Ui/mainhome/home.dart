@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:fursancart/Ui/mainhome/bestoffer.dart';
 import 'package:fursancart/Ui/mainhome/lg%20_company.dart';
 import 'package:fursancart/Ui/mainhome/slider1.dart';
 import 'package:fursancart/Ui/mainhome/trading_now.dart';
+
 
 class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
@@ -11,6 +14,8 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  @override
+
   @override
   Widget build(BuildContext context) {
     var mheight = MediaQuery
@@ -172,9 +177,7 @@ class _HomeState extends State<Home> {
                     width: mwidth*0.40,
                   ),
 
-                  GestureDetector(onTap:() {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>Trading_now()));
-                    },
+                  GestureDetector(onTap:() {},
                       child:Text("see all",style: TextStyle(fontSize: 20,color: Color(0xff000000)),
                   )
                   ),
@@ -190,56 +193,7 @@ class _HomeState extends State<Home> {
               child: Container(
                 height: mheight*0.21,
                 width: mwidth,
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: [
-
-                    Padding(
-                      padding: const EdgeInsets.only(left:10),
-                      child: Container(
-                        height: mheight*0.20,
-                        width: mwidth*0.35,
-                        color: Color(0xffEFEEEE),
-                        child: Column(
-                          children: [
-                            Container(
-                              height: mheight*0.12,
-                              width: mwidth*0.35,
-                              decoration: BoxDecoration(color: Color(0xffEFEEEE),
-                                image: DecorationImage(image: AssetImage("assets/TV-PNG-HD-Quality 1.png"))
-                              ),
-                            ),
-                            Container(
-                              height: mheight*0.08,
-                              width: mwidth*0.33,
-                              color: Colors.white,
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text("Samsung Tv",style: TextStyle(fontSize:12,fontWeight: FontWeight.bold),
-                                  ),
-                                  Text("32” Full HD",style: TextStyle(fontSize: 10,color: Color(0xff999595)),),
-                                  Row(
-                                    children: [
-                                      Text("45000      ",style: TextStyle(fontSize: 8,decoration: TextDecoration.lineThrough,color:Color(0xff999595)),),
-                                      SizedBox(
-                                        width: mwidth*0.01,
-                                      ),
-                                      Text("40000",style: TextStyle(fontSize: 8,color: Color(0xff999595,)),)
-                                    ],
-                                  ),
-                                ],
-                              ),
-
-
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
+                child: Trading_now()
               ),
             ),
           SizedBox(
@@ -263,65 +217,9 @@ class _HomeState extends State<Home> {
               height: mheight*0.02,
             ),
             Container(
-              height: mheight*0.21,
-              width: mwidth,
-              child: ListView(
-                scrollDirection: Axis.horizontal,
-                children: [
-
-                  Padding(
-                    padding: const EdgeInsets.only(left:10),
-                    child: Container(
-                      height: mheight*0.20,
-                      width: mwidth*0.35,
-                      color: Color(0xffEFEEEE),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: mheight*0.12,
-                            width: mwidth*0.35,
-                            decoration: BoxDecoration(color: Color(0xffEFEEEE),
-                                image: DecorationImage(image: AssetImage("assets/image 7 (1).png"))
-                            ),
-                          ),
-                          Container(
-                            height: mheight*0.02,
-                            width: mwidth*0.25,
-                            color: Colors.red,
-                            decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
-                          ),
-                          Container(
-                            height: mheight*0.08,
-                            width: mwidth*0.33,
-                            color: Colors.white,
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text("Samsung Tv",style: TextStyle(fontSize:12,fontWeight: FontWeight.bold),
-                                ),
-                                Text("32” Full HD",style: TextStyle(fontSize: 10,color: Color(0xff999595)),),
-                                Row(
-                                  children: [
-                                    Text("45000      ",style: TextStyle(fontSize: 8,decoration: TextDecoration.lineThrough,color:Color(0xff999595)),),
-                                    SizedBox(
-                                      width: mwidth*0.01,
-                                    ),
-                                    Text("40000",style: TextStyle(fontSize: 8,color: Color(0xff999595,)),)
-                                  ],
-                                ),
-                              ],
-                            ),
-
-
-                          )
-                        ],
-                      ),
-                    ),
-                  )
-                ],
-              ),
+              child: Bestoffer(),
             )
+
     ],
     ),
       ),

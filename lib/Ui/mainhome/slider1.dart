@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
-import 'package:fursancart/Repository/modelclass/homemodelclass.dart';
+import 'package:fursancart/Repository/modelclass/BannerModelClass.dart';
 import 'package:fursancart/main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -62,7 +62,7 @@ class _Slider1State extends State<Slider1> {
                     width: width,
                     height: height,
                     child: Image.network(
-                      basePath + "/banner/images/571ad649fce4056b.jpg1675237795766-789118031.jpg",
+                      basePath + "/banner/images/"+slidermodel[index].banner!.first.url.toString(),
                       fit: BoxFit.cover,
                     ));
               },
