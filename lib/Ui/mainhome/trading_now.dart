@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
+
+import '../../Repository/modelclass/TradingnowModelClass.dart';
+import '../../main.dart';
 
 class Trading_now extends StatefulWidget {
   const Trading_now({Key? key}) : super(key: key);
@@ -8,6 +13,12 @@ class Trading_now extends StatefulWidget {
 }
 
 class _Trading_nowState extends State<Trading_now> {
+  late List<TradingnowModelClass> trading ;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     var mheight = MediaQuery
@@ -19,12 +30,25 @@ class _Trading_nowState extends State<Trading_now> {
         .size
         .width;
     return
-      Container(
+      BlocBuilder<TradingnowBloc, TradingnowState>(
+  builder: (context, state) {
+      if (state is TradingnowLoading) {
+        print("loding");
+      }
+      if (state is TradingnowblocError) {
+        print("error");
+      }
+      if (state is TradingnowblocLoaded) {
+        print("Loaded");
+
+        trading = BlocProvider
+            .of<TradingnowBloc>(context)
+            .tradingnowModelClass;
+    return Container(
         height: mheight*0.23,
-        width: mwidth*0.45,
-        child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: [
+        width: mwidth*0.45,color: Colors.red,
+        child: ListView.builder(scrollDirection: Axis.horizontal,itemBuilder: (ctx,index)
+        {return
 
           Padding(
             padding: const EdgeInsets.only(left:10),
@@ -38,7 +62,7 @@ class _Trading_nowState extends State<Trading_now> {
                     height: mheight*0.12,
                     width: mwidth*0.35,
                     decoration: BoxDecoration(color: Color(0xffEFEEEE),
-                        image: DecorationImage(image: AssetImage("assets/TV-PNG-HD-Quality 1.png"))
+                        image: DecorationImage(image: NetworkImage( basePath + "/produc/images/"+trading[index].images!.first.url.toString()))
                     ),
                   ),
                   Container(
@@ -69,9 +93,10 @@ class _Trading_nowState extends State<Trading_now> {
                 ],
               ),
             ),
-          )
-        ],
+          );}
     ),
       );
+  }else{return Container();
+
   }
-}
+});}}

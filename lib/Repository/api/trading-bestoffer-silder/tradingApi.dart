@@ -7,14 +7,14 @@ import 'package:http/http.dart';
 import '../api_clinent.dart';
 
 
-class SliderApi {
+class TradingApi {
 
 
   ApiClient  apiClient = ApiClient();
   String trendingpath = '/product/all?tag=trending';
 
 
-  Future <List<TradingnowModelClass>> slider() async {
+  Future <List<TradingnowModelClass>> trading() async {
     Response response = await apiClient.invokeAPI(trendingpath, "GET_",null);
     print(response.body);
     return TradingnowModelClass .listFromJson(jsonDecode(response.body));

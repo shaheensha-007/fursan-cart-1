@@ -17,7 +17,19 @@ class SliderBloc extends Bloc<SliderEvent, SliderState> {
   SliderBloc() : super(SliderInitial()) {
     on<FetchSliderEvent>((event, emit) async{
       // TODO: implement event handler
-
+      emit(SliderblocLoading());
+      print('loading');
+      try{
+        homemodelclass=await sliderApi.slider();
+        slider=homemodelclass.where((element) => element.tag==null).toList();
+        bestoffer=homemodelclass.where((element) => element.tag!=null).toList();
+        emit(SliderblocLoaded());
+        print('loaded');
+      } catch(e){
+        print(e);
+        emit(SliderblocError());
+        print('error');
+      }
     });
   }
 }

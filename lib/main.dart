@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
+import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Ui/mainhome/bottomnavigationbar.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';
@@ -25,7 +26,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
             BlocProvider(create: (context) => SignupBloc()),
             BlocProvider(create: (context)=> WelcomeBloc()),
-            BlocProvider(create: (context)=>SliderBloc()),
+            BlocProvider(create: (context)=>SliderBloc()),BlocProvider(create: (context)=>TradingnowBloc())
     ],
           child: MaterialApp(
             title: 'Flutter Demo',

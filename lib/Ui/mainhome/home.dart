@@ -188,13 +188,10 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: mheight*0.02,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left:10),
-              child: Container(
-                height: mheight*0.21,
-                width: mwidth,
-                child: Trading_now()
-              ),
+            Container(
+              height: mheight*0.21,
+              width: mwidth,color: Colors.lightGreenAccent,
+              child: Trading_now()
             ),
           SizedBox(
             height: mheight*0.02,
