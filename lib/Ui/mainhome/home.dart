@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fursancart/Ui/mainhome/Choosebrand.dart';
 
 import 'package:fursancart/Ui/mainhome/bestoffer.dart';
 import 'package:fursancart/Ui/mainhome/lg%20_company.dart';
@@ -108,61 +109,7 @@ class _HomeState extends State<Home> {
          Container(
            height: mheight*0.10,
            width: mwidth,
-           child: ListView(
-             scrollDirection:Axis.horizontal,
-             children: [
-               Padding(
-                 padding: const EdgeInsets.only(left: 20),
-                 child: Container(
-                     height: mheight*0.20,
-                     width: mwidth*0.20,
-                   decoration: BoxDecoration(
-                       image: DecorationImage(image: AssetImage("assets/mi logo.png"),
-                         fit: BoxFit.cover,)
-                   ),
-                   ),
-               ),
-               SizedBox(
-                 width: mwidth*0.03,
-               ),
-               Container(
-                 height: mheight*0.20,
-                 width: mwidth*0.20,
-                 decoration: BoxDecoration(
-                     image: DecorationImage(image: AssetImage("assets/mi logo.png"),
-                       fit: BoxFit.cover,)
-                 ),
-               ),
-               SizedBox(
-                 width:mwidth*0.03 ,
-               ),
-               Container(
-                 height: mheight*0.20,
-                 width: mwidth*0.20,
-                   decoration: BoxDecoration(
-                   image: DecorationImage(image: AssetImage("assets/mi logo.png"),
-                     fit: BoxFit.cover,)
-               ),
-               ),
-               SizedBox(
-                 width: mwidth*0.03,
-               ),
-               GestureDetector(
-                 onTap: (){  Navigator.push(context, MaterialPageRoute(builder: (context)=>Lg_company()));},
-                 child: Container(
-                   height: mheight*0.20,
-                   width: mwidth*0.20,
-                   decoration: BoxDecoration(
-                     image: DecorationImage(image: AssetImage("assets/mi logo.png"),
-                     fit: BoxFit.cover,)
-
-                   ),
-
-                 ),
-               ),
-             ],
-
-           ),
+           child: Choosebrand()
          ),
             //#tranding product
             SizedBox(
@@ -190,7 +137,7 @@ class _HomeState extends State<Home> {
             ),
             Container(
               height: mheight*0.21,
-              width: mwidth,color: Colors.lightGreenAccent,
+              width: mwidth,
               child: Trading_now()
             ),
           SizedBox(

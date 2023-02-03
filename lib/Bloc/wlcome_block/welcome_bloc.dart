@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../Repository/api/trading-bestoffer-silder/SliderApi.dart';
+import '../../Repository/api/trading-bestoffer-silder/sliderapi/SliderApi.dart';
 import '../../Repository/api/email_login/welcome_repository/welcomeApi.dart';
 import '../../Repository/modelclass/usermodel.dart';
 

@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../../Repository/api/trading-bestoffer-silder/tradingApi.dart';
+import '../../Repository/api/trading-bestoffer-silder/tradingapi/tradingApi.dart';
 import '../../Repository/modelclass/TradingnowModelClass.dart';
 import '../../Repository/modelclass/TradingnowModelClass.dart';
 
@@ -24,9 +24,9 @@ class TradingnowBloc extends Bloc<TradingnowEvent, TradingnowState> {
         emit(TradingnowblocLoaded());
         print('loaded');
       } catch(e){
-        print(e);
+
         emit(TradingnowblocError());
-        print('error');
+        print('********$e');
       }
       // TODO: implement event handler
     });

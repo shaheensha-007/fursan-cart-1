@@ -4,7 +4,7 @@ import 'dart:convert';
 import 'package:fursancart/Repository/modelclass/TradingnowModelClass.dart';
 import 'package:http/http.dart';
 
-import '../api_clinent.dart';
+import '../../api_clinent.dart';
 
 
 class TradingApi {

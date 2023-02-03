@@ -26,7 +26,8 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(providers: [
             BlocProvider(create: (context) => SignupBloc()),
             BlocProvider(create: (context)=> WelcomeBloc()),
-            BlocProvider(create: (context)=>SliderBloc()),BlocProvider(create: (context)=>TradingnowBloc())
+            BlocProvider(create: (context)=>SliderBloc()),
+            BlocProvider(create: (context)=>TradingnowBloc()),
     ],
           child: MaterialApp(
             title: 'Flutter Demo',

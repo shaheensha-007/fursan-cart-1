@@ -16,6 +16,7 @@ class _Trading_nowState extends State<Trading_now> {
   late List<TradingnowModelClass> trading ;
   @override
   void initState() {
+    BlocProvider.of<TradingnowBloc>(context).add(FetchTradingnowEvent());
     // TODO: implement initState
     super.initState();
   }
@@ -44,58 +45,49 @@ class _Trading_nowState extends State<Trading_now> {
         trading = BlocProvider
             .of<TradingnowBloc>(context)
             .tradingnowModelClass;
-    return Container(
-        height: mheight*0.23,
-        width: mwidth*0.45,color: Colors.red,
-        child: ListView.builder(scrollDirection: Axis.horizontal,itemBuilder: (ctx,index)
-        {return
-
-          Padding(
-            padding: const EdgeInsets.only(left:10),
-            child: Container(
-              height: mheight*0.20,
+    return ListView.builder(itemCount:trading.length,scrollDirection: Axis.horizontal,itemBuilder: (ctx,index)
+    {return
+      Container(
+        height: mheight*0.20,
+        width: mwidth*0.35,
+        child: Column(
+          children: [
+            Container(
+              height: mheight*0.12,
               width: mwidth*0.35,
-              color: Color(0xffEFEEEE),
-              child: Column(
-                children: [
-                  Container(
-                    height: mheight*0.12,
-                    width: mwidth*0.35,
-                    decoration: BoxDecoration(color: Color(0xffEFEEEE),
-                        image: DecorationImage(image: NetworkImage( basePath + "/produc/images/"+trading[index].images!.first.url.toString()))
-                    ),
-                  ),
-                  Container(
-                    height: mheight*0.08,
-                    width: mwidth*0.33,
-                    color: Colors.white,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("Samsung Tv",style: TextStyle(fontSize:12,fontWeight: FontWeight.bold),
-                        ),
-                        Text("32” Full HD",style: TextStyle(fontSize: 10,color: Color(0xff999595)),),
-                        Row(
-                          children: [
-                            Text("45000      ",style: TextStyle(fontSize: 8,decoration: TextDecoration.lineThrough,color:Color(0xff999595)),),
-                            SizedBox(
-                              width: mwidth*0.01,
-                            ),
-                            Text("40000",style: TextStyle(fontSize: 8,color: Color(0xff999595,)),)
-                          ],
-                        ),
-                      ],
-                    ),
-
-
-                  )
-                ],
+              decoration: BoxDecoration(color: Color(0xffEFEEEE),
+                  image: DecorationImage(image: NetworkImage( basePath + "/produc/images/"+trading[index].images!.first.url.toString()))
               ),
             ),
-          );}
-    ),
-      );
+            Container(
+              height: mheight*0.08,
+              width: mwidth*0.33,
+              color: Colors.white,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(trading[index].name.toString(),style: TextStyle(fontSize:12,fontWeight: FontWeight.bold),
+                   maxLines: 1,),
+                  Text(trading[index].description.toString(),style: TextStyle(fontSize: 10,color: Color(0xff999595),),maxLines: 1,),
+                  Row(
+                    children: [
+                      Text(trading[index].discount.toString(),style: TextStyle(fontSize: 8,decoration: TextDecoration.lineThrough,color:Color(0xff999595)),maxLines: 1,),
+                      SizedBox(
+                        width: mwidth*0.01,
+                      ),
+                      Text(trading[index].rating.toString(),style: TextStyle(fontSize: 8,color: Color(0xff999595,)),maxLines: 1,)
+                    ],
+                  ),
+                ],
+              ),
+
+
+            )
+          ],
+        ),
+      );}
+    );
   }else{return Container();
 
   }

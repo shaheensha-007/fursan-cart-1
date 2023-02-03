@@ -4,7 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:meta/meta.dart';
 
-import '../../Repository/api/trading-bestoffer-silder/SliderApi.dart';
+import '../../Repository/api/trading-bestoffer-silder/sliderapi/SliderApi.dart';
 import '../../Repository/modelclass/BannerModelClass.dart';
 
 part 'slider_event.dart';

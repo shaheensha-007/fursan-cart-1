@@ -1,11 +1,9 @@
 import 'dart:convert';
 
-
-import 'package:fursancart/Repository/modelclass/usermodel.dart';
 import 'package:http/http.dart';
 
-import '../../modelclass/BannerModelClass.dart';
-import '../api_clinent.dart';
+import '../../../modelclass/BannerModelClass.dart';
+import '../../api_clinent.dart';
 
 
 class SliderApi {
