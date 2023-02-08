@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 
-import '../../Repository/modelclass/TradingnowModelClass.dart';
-import '../../main.dart';
+import '../../../Repository/modelclass/TradingnowModelClass.dart';
+import '../../../main.dart';
 
 class Trading_now extends StatefulWidget {
   const Trading_now({Key? key}) : super(key: key);

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../Bloc/slider_blok/slider_bloc.dart';
-import '../../Repository/modelclass/BannerModelClass.dart';
-import '../../main.dart';
+import '../../../Bloc/slider_blok/slider_bloc.dart';
+import '../../../Repository/modelclass/BannerModelClass.dart';
+import '../../../main.dart';
 
 class Bestoffer extends StatefulWidget {
   const Bestoffer({Key? key}) : super(key: key);

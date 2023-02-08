@@ -13,9 +13,9 @@ class Choosebrand extends StatefulWidget {
   @override
   State<Choosebrand> createState() => _ChoosebrandState();
 }
-
+late List <ChoosebrandModelclass> choosebrand;
 class _ChoosebrandState extends State<Choosebrand> {
-  late List <ChoosebrandModelclass> choosebrand;
+
   @override
   void initState() {
     BlocProvider.of<ChoosebrandBloc>(context).add(FetchChoosebrandEvent());
@@ -41,21 +41,19 @@ class _ChoosebrandState extends State<Choosebrand> {
       }
       if (state is ChoosebrandblocLoaded) {choosebrand = BlocProvider
           .of<ChoosebrandBloc>(context)
-          .choosebrandModelClass;
+          .choosebrandModelClass; print(choosebrand.length.toString());
         print("Loaded");
-
-
-
       }return ListView.builder(itemCount:choosebrand.length,
        itemBuilder: (BuildContext context, int index) {
-        print(choosebrand[index].image!.url!.length);print(choosebrand.length);
+
+
         return GestureDetector(
         onTap: (){  Navigator.push(context, MaterialPageRoute(builder: (context)=>Lg_company()));},
     child: Container(
     height: mheight*0.20,
     width: mwidth*0.20,
     decoration: BoxDecoration(
-    image: DecorationImage(image: NetworkImage(basePath+"/brand/images"+choosebrand[index].image!.url.toString()),
+    image: DecorationImage(image: NetworkImage(basePath+"/brand/images/"+choosebrand[index].image!.url.toString()),
     fit: BoxFit.cover,)
 
     ),

@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fursancart/Ui/mainhome/Choosebrand.dart';
 
-import 'package:fursancart/Ui/mainhome/bestoffer.dart';
+import 'package:fursancart/Ui/mainhome/bestoffer/bestoffer.dart';
+import 'package:fursancart/Ui/mainhome/bestoffer/bestofferproduct.dart';
 import 'package:fursancart/Ui/mainhome/lg%20_company.dart';
 import 'package:fursancart/Ui/mainhome/slider1.dart';
-import 'package:fursancart/Ui/mainhome/trading_now.dart';
+import 'package:fursancart/Ui/mainhome/trandingnow/tadingproduct.dart';
+import 'package:fursancart/Ui/mainhome/trandingnow/trading_now.dart';
 
 
 class Home extends StatefulWidget {
@@ -107,7 +109,7 @@ class _HomeState extends State<Home> {
               height:mheight*0.02,
             ),
          Container(
-           height: mheight*0.10,
+           height: mheight*0.20,
            width: mwidth,
            child: Choosebrand()
          ),
@@ -124,7 +126,7 @@ class _HomeState extends State<Home> {
                     width: mwidth*0.40,
                   ),
 
-                  GestureDetector(onTap:() {},
+                  GestureDetector(onTap:() {Navigator.push(context, MaterialPageRoute(builder: (context)=>Tradingproduct()));},
                       child:Text("see all",style: TextStyle(fontSize: 20,color: Color(0xff000000)),
                   )
                   ),
@@ -151,7 +153,8 @@ class _HomeState extends State<Home> {
                 SizedBox(
                   width: mwidth*0.50,
                 ),
-                GestureDetector(onTap: () {}, child:Text("see all",style: TextStyle(fontSize: 20,color: Color(0xff000000)),
+                GestureDetector(onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=>Bestofferproduct()));},
+                    child:Text("see all",style: TextStyle(fontSize: 20,color: Color(0xff000000)),
                 )
                 ),
               ],

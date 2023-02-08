@@ -10,7 +10,7 @@ import 'api_exception.dart';
 class ApiClient {
 
 
-  String token = "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGRsYmRxbWgwMGVwenJzNm1zcDVzdHpqIiwiZW1haWwiOiJzZXZtcGlvb29AZ21haWwuY29tdHljIiwiaWF0IjoxNjc1MjM0NTIyLCJleHAiOjE2NzU4MzkzMjJ9.CbmCi3QqAAuo4hm8qELJ0CdBo8mR7IrFZfwl5xMAb-s";
+  String token = "Bearer  eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjbGR2Yjg1dHcwMDBtenJrc3k0YjBmMHA2IiwiZW1haWwiOiJzZXZtcGlva29AZ21haWwuY29tdHljIiwiaWF0IjoxNjc1ODM4OTI0LCJleHAiOjE2NzY0NDM3MjR9.dPRJKIpMBdIDQnsSyEA6gT8XgSvVeGT5e6d2qDcrbxQ";
 
   Future<Response> invokeAPI(String path, String method, Object? body) async {
     Map<String, String> headerParams = {

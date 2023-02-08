@@ -12,7 +12,7 @@ class ChoosebrandBloc extends Bloc<ChoosebrandEvent, ChoosebrandState> {
   late List<ChoosebrandModelclass> choosebrandModelClass;
   ChoosebrandApi choosebrandApi=ChoosebrandApi();
   ChoosebrandBloc() : super(ChoosebrandInitial()) {
-    on<ChoosebrandEvent>((event, emit) async {
+    on<FetchChoosebrandEvent>((event, emit) async {
       emit(ChoosebrandblocLoading());
       print('loading');
       try{

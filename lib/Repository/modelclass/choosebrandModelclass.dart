@@ -1,23 +1,23 @@
 class ChoosebrandModelclass {
   ChoosebrandModelclass({
-      this.id, 
-      this.createdAt, 
-      this.updatedAt, 
-      this.name, 
-      this.image,});
+    this.id,
+    this.createdAt,
+    this.updatedAt,
+    this.name,
+    this.image,});
 
   ChoosebrandModelclass.fromJson(dynamic json) {
     id = json['id'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     name = json['name'];
-    image = json['image'] != null ? Image.fromJson(json['image']) : null;
+    image = json['image'] != null ? Image1.fromJson(json['image']) : null;
   }
   String? id;
   String? createdAt;
   String? updatedAt;
   String? name;
-  Image? image;
+  Image1? image;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -30,19 +30,18 @@ class ChoosebrandModelclass {
     }
     return map;
   }
+//created item:
   static List<ChoosebrandModelclass> listFromJson(List<dynamic> json) {
     return json == null
         ? []
         : json.map((value) => ChoosebrandModelclass.fromJson(value)).toList();
-  }
-}
+  }}
 
+class Image1 {
+  Image1({
+    this.url,});
 
-class Image {
-  Image({
-      this.url,});
-
-  Image.fromJson(dynamic json) {
+  Image1.fromJson(dynamic json) {
     url = json['url'];
   }
   String? url;
@@ -54,3 +53,4 @@ class Image {
   }
 
 }
+
