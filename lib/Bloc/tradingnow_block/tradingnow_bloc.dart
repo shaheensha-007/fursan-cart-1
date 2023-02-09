@@ -13,6 +13,7 @@ part 'tradingnow_event.dart';
 part 'tradingnow_state.dart';
 
 class TradingnowBloc extends Bloc<TradingnowEvent, TradingnowState> {
+
   late List<TradingnowModelClass> tradingnowModelClass;
   TradingApi tradingApi=TradingApi();
   TradingnowBloc() : super(TradingnowInitial()) {

@@ -30,7 +30,9 @@ class _ChoosebrandState extends State<Choosebrand> {
     var mwidth = MediaQuery
         .of(context)
         .size
-        .width;
+        .width;choosebrand = BlocProvider
+        .of<ChoosebrandBloc>(context)
+        .choosebrandModelClass;
     return BlocBuilder<ChoosebrandBloc, ChoosebrandState>(
   builder: (context, state) {
       if (state is ChoosebrandblocLoading) {
@@ -39,9 +41,7 @@ class _ChoosebrandState extends State<Choosebrand> {
       if (state is ChoosebrandblocError) {
         print("error");
       }
-      if (state is ChoosebrandblocLoaded) {choosebrand = BlocProvider
-          .of<ChoosebrandBloc>(context)
-          .choosebrandModelClass; print(choosebrand.length.toString());
+      if (state is ChoosebrandblocLoaded) { print(choosebrand.length.toString());
         print("Loaded");
       }return ListView.builder(itemCount:choosebrand.length,
        itemBuilder: (BuildContext context, int index) {
