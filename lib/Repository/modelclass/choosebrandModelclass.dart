@@ -30,12 +30,13 @@ class ChoosebrandModelclass {
     }
     return map;
   }
+
+  static List<ChoosebrandModelclass>? listFromJson(List<dynamic> json) {
+    return json == null      ? []
+        : json.map((value) => ChoosebrandModelclass.fromJson(value)).toList();}
 //created item:
-  static List<ChoosebrandModelclass> listFromJson(List<dynamic> json) {
-    return json == null
-        ? []
-        : json.map((value) => ChoosebrandModelclass.fromJson(value)).toList();
-  }}
+
+}
 
 class Image1 {
   Image1({

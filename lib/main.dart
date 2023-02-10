@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fursancart/Bloc/choosebrand_bloc/choosebrand_bloc.dart';
 import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
 import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
@@ -13,7 +12,9 @@ import 'package:fursancart/Ui/mainhome/slider1.dart';
 import 'package:fursancart/Ui/mainhome/trandingnow/tadingproduct.dart';
 
 
+import 'Bloc/choosebrand/choosebrand_bloc.dart';
 import 'Bloc/signup_block/signup_bloc.dart';
+import 'Bloc/tradingproduct_block/tradingproduct_bloc.dart';
 import 'Ui/openpage.dart';
 final String basePath = 'http://fursancart.rootsys.in/api';
 
@@ -34,6 +35,8 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context)=>SliderBloc()),
             BlocProvider(create: (context)=>TradingnowBloc()),
             BlocProvider(create: (context)=>ChoosebrandBloc()),
+            BlocProvider(create: (context)=>TradingproductBloc())
+
     ],
           child: MaterialApp(
             title: 'Flutter Demo',

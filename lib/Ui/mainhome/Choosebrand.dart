@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Repository/modelclass/choosebrandModelclass.dart';
 import 'package:fursancart/main.dart';
 
-import '../../Bloc/choosebrand_bloc/choosebrand_bloc.dart';
+import '../../Bloc/choosebrand/choosebrand_bloc.dart';
 import 'lg _company.dart';
 
 class Choosebrand extends StatefulWidget {
@@ -13,7 +13,7 @@ class Choosebrand extends StatefulWidget {
   @override
   State<Choosebrand> createState() => _ChoosebrandState();
 }
-late List <ChoosebrandModelclass> choosebrand;
+late List<ChoosebrandModelclass>? choosebrand;
 class _ChoosebrandState extends State<Choosebrand> {
 
   @override
@@ -30,36 +30,44 @@ class _ChoosebrandState extends State<Choosebrand> {
     var mwidth = MediaQuery
         .of(context)
         .size
-        .width;choosebrand = BlocProvider
+        .width;
+    choosebrand = BlocProvider
         .of<ChoosebrandBloc>(context)
-        .choosebrandModelClass;
+        .choosebrandModelclass;
     return BlocBuilder<ChoosebrandBloc, ChoosebrandState>(
   builder: (context, state) {
-      if (state is ChoosebrandblocLoading) {
+      if (state is Choosebrandblocloading) {
         print("loding");
       }
       if (state is ChoosebrandblocError) {
         print("error");
       }
-      if (state is ChoosebrandblocLoaded) { print(choosebrand.length.toString());
+      if (state is Choosebrandblocloaded) {
+        print(choosebrand!.length.toString());
         print("Loaded");
-      }return ListView.builder(itemCount:choosebrand.length,
-       itemBuilder: (BuildContext context, int index) {
 
+        return ListView.builder(itemCount: choosebrand!.length,
+            itemBuilder: (BuildContext context, int index) {
 
-        return GestureDetector(
-        onTap: (){  Navigator.push(context, MaterialPageRoute(builder: (context)=>Lg_company()));},
-    child: Container(
-    height: mheight*0.20,
-    width: mwidth*0.20,
-    decoration: BoxDecoration(
-    image: DecorationImage(image: NetworkImage(basePath+"/brand/images/"+choosebrand[index].image!.url.toString()),
-    fit: BoxFit.cover,)
+              return GestureDetector(
+                  onTap: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Lg_company()));
+                  },
+                  child: Container(
+                    height: mheight * 0.20,
+                    width: mwidth * 0.20,
+                    decoration: BoxDecoration(
+                        image: DecorationImage(image: NetworkImage(
+                            basePath + "/brand/images/" + choosebrand![index]
+                                .image!.url.toString()),
+                          fit: BoxFit.cover,)
 
-    ),
+                    ),
 
-    )); });
-  },
+                  ));
+            });
+        }else{return Container();} }
 );
 
   }
