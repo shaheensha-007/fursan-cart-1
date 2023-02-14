@@ -11,7 +11,7 @@ class TradingApi {
 
 
   ApiClient  apiClient = ApiClient();
-  String trendingpath = '/product/images/';
+  String trendingpath = '/product/all?tag=trending';
 
 
   Future <List<TradingnowModelClass>> trading() async {

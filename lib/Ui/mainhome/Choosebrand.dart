@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:fursancart/Repository/modelclass/choosebrandModelclass.dart';
 import 'package:fursancart/main.dart';
 
 import '../../Bloc/choosebrand/choosebrand_bloc.dart';
+import '../../Repository/modelclass/choosebrand.dart';
 import 'lg _company.dart';
 
 class Choosebrand extends StatefulWidget {
@@ -13,7 +13,7 @@ class Choosebrand extends StatefulWidget {
   @override
   State<Choosebrand> createState() => _ChoosebrandState();
 }
-late List<ChoosebrandModelclass>? choosebrand;
+late List<ChoosebrandModel> choosebrand;
 class _ChoosebrandState extends State<Choosebrand> {
 
   @override
@@ -31,9 +31,7 @@ class _ChoosebrandState extends State<Choosebrand> {
         .of(context)
         .size
         .width;
-    choosebrand = BlocProvider
-        .of<ChoosebrandBloc>(context)
-        .choosebrandModelclass;
+
     return BlocBuilder<ChoosebrandBloc, ChoosebrandState>(
   builder: (context, state) {
       if (state is Choosebrandblocloading) {
@@ -43,10 +41,10 @@ class _ChoosebrandState extends State<Choosebrand> {
         print("error");
       }
       if (state is Choosebrandblocloaded) {
-        print(choosebrand!.length.toString());
+        choosebrand = BlocProvider.of<ChoosebrandBloc>(context).choose;
         print("Loaded");
 
-        return ListView.builder(itemCount: choosebrand!.length,
+        return ListView.builder(itemCount: choosebrand.length,scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
 
               return GestureDetector(

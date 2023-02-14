@@ -4,7 +4,7 @@ import 'package:fursancart/Ui/mainhome/home.dart';
 
 import '../../../Bloc/choosebrand/choosebrand_bloc.dart';
 import '../../../Bloc/tradingproduct_block/tradingproduct_bloc.dart';
-import '../../../Repository/modelclass/choosebrandModelclass.dart';
+import '../../../Repository/modelclass/tradingproductModelclass.dart';
 
 class Tradingproduct extends StatefulWidget {
   const Tradingproduct({Key? key}) : super(key: key);
@@ -12,9 +12,9 @@ class Tradingproduct extends StatefulWidget {
   @override
   State<Tradingproduct> createState() => _TradingproductState();
 }
-
+late List<TradingproductModelclass>tradingproduct ;
 class _TradingproductState extends State<Tradingproduct> {
-  late List<ChoosebrandModelclass>tradingproduct ;
+
   @override
   void initState() {
     BlocProvider.of<TradingproductBloc>(context).add(FetchTradingproduct());
@@ -31,9 +31,7 @@ class _TradingproductState extends State<Tradingproduct> {
         .of(context)
         .size
         .width;
-    tradingproduct = BlocProvider
-        .of<TradingproductBloc>(context)
-        .choosebrandModelclass;
+
     return Scaffold(
       appBar:AppBar(
         backgroundColor: Colors.white,
@@ -57,7 +55,7 @@ class _TradingproductState extends State<Tradingproduct> {
         print("error");
       }
       if (state is Tradingproductblocloaded) {
-        tradingproduct=BlocProvider.of<TradingproductBloc>(context).choosebrandModelclass;
+        tradingproduct=BlocProvider.of<TradingproductBloc>(context).tradingproduct ;
         print(tradingproduct!.length.toString());
         print("Loaded");
 
@@ -72,7 +70,7 @@ class _TradingproductState extends State<Tradingproduct> {
                       child: Container(
                         height: mheight * 0.10,
                         width: mwidth * 0.30,
-                        child: Image.asset("assets/TV-PNG-HD-Quality 1.png"),
+                        child: Image.network("assets/TV-PNG-HD-Quality 1.png"),
                       ),
                     ),
                     SizedBox(

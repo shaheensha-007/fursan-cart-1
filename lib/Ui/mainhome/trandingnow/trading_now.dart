@@ -11,9 +11,9 @@ class Trading_now extends StatefulWidget {
   @override
   State<Trading_now> createState() => _Trading_nowState();
 }
-
+ late List<TradingnowModelClass>trading ;
 class _Trading_nowState extends State<Trading_now> {
-  late List<TradingnowModelClass> trading ;
+
   @override
   void initState() {
     BlocProvider.of<TradingnowBloc>(context).add(FetchTradingnowEvent());
@@ -30,7 +30,6 @@ class _Trading_nowState extends State<Trading_now> {
         .of(context)
         .size
         .width;
-    return
       BlocBuilder<TradingnowBloc, TradingnowState>(
   builder: (context, state) {
       if (state is TradingnowLoading) {
@@ -41,10 +40,11 @@ class _Trading_nowState extends State<Trading_now> {
       }
       if (state is TradingnowblocLoaded) {
         print("Loaded");
-
+print(trading.length.toString());
         trading = BlocProvider
             .of<TradingnowBloc>(context)
             .tradingnowModelClass;
+
     return ListView.builder(itemCount:trading.length,scrollDirection: Axis.horizontal,itemBuilder: (ctx,index)
     {return
       Container(
@@ -56,7 +56,7 @@ class _Trading_nowState extends State<Trading_now> {
               height: mheight*0.12,
               width: mwidth*0.35,
               decoration: BoxDecoration(color: Color(0xffEFEEEE),
-                  image: DecorationImage(image: NetworkImage( basePath + "/produc/images/"+trading[index].images!.first.url.toString()))
+                  image: DecorationImage(image: NetworkImage( basePath + "/product/images/"+trading![index].images!.first.url.toString()))
               ),
             ),
             Container(
