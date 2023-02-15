@@ -11,13 +11,13 @@ class TradingApi {
 
 
   ApiClient  apiClient = ApiClient();
-  String trendingpath = '/product/all?tag=trending';
+  String trendingpath = '/product/all';
 
 
-  Future <List<TradingnowModelClass>> trading() async {
+  Future <List<TradingnowModel>> trading() async {
     Response response = await apiClient.invokeAPI(trendingpath, "GET_",null);
     print(response.body);
-    return TradingnowModelClass .listFromJson(jsonDecode(response.body));
+    return TradingnowModel .listFromJson(jsonDecode(response.body));
   }
 
 }

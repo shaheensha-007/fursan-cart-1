@@ -24,7 +24,7 @@ class _Lg_companyState extends State<Lg_company> {
        backgroundColor: Colors.white,
         leading:
 
-          IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));}, icon: Icon(Icons.arrow_back,color: Colors.black,)),
+          IconButton(onPressed: (){}, icon: Icon(Icons.arrow_back,color: Colors.black,)),
 
         title:Text("LG PRODUCTS",style: TextStyle(fontSize: 20,fontWeight: FontWeight.w500,color: Colors.black,),),
         actions: [

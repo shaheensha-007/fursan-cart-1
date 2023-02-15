@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
 import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
+import 'package:fursancart/Ui/maincategory.dart';
 import 'package:fursancart/Ui/mainhome/bestoffer/bestofferproduct.dart';
 import 'package:fursancart/Ui/mainhome/bottomnavigationbar.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';
@@ -45,7 +46,7 @@ class MyApp extends StatelessWidget {
 
               primarySwatch: Colors.blue,
             ),
-            home: Home()
+            home: Maincategory()
             ),
           );
   }

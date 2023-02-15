@@ -4,6 +4,7 @@ import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';
 
 import 'letstart.dart';
+import 'mainhome/bottomnavigationbar.dart';
 
 class Welcome extends StatefulWidget {
   Welcome({Key? key}) : super(key: key);
@@ -41,7 +42,7 @@ class _WelcomeState extends State<Welcome> {
   listener: (context, state) {   if (state is welcomeblocLoaded) {
     print('loaded');
     Navigator.of(context).push(
-        MaterialPageRoute(builder: (a) =>  Home()));
+        MaterialPageRoute(builder: (a) =>  Bottomnavigationbar()));
   }
   if (state is welcomeblocLoading) {
     print('loding');

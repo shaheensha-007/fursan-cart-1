@@ -11,7 +11,7 @@ class Trading_now extends StatefulWidget {
   @override
   State<Trading_now> createState() => _Trading_nowState();
 }
- late List<TradingnowModelClass>trading ;
+ late List<TradingnowModel>trading ;
 class _Trading_nowState extends State<Trading_now> {
 
   @override
@@ -30,7 +30,7 @@ class _Trading_nowState extends State<Trading_now> {
         .of(context)
         .size
         .width;
-      BlocBuilder<TradingnowBloc, TradingnowState>(
+    return  BlocBuilder<TradingnowBloc, TradingnowState>(
   builder: (context, state) {
       if (state is TradingnowLoading) {
         print("loding");
@@ -43,7 +43,7 @@ class _Trading_nowState extends State<Trading_now> {
 print(trading.length.toString());
         trading = BlocProvider
             .of<TradingnowBloc>(context)
-            .tradingnowModelClass;
+            .tradingnowModel;
 
     return ListView.builder(itemCount:trading.length,scrollDirection: Axis.horizontal,itemBuilder: (ctx,index)
     {return

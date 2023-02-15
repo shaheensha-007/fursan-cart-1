@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fursancart/Ui/maincategory.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';
 import 'package:fursancart/Ui/mainhome/order.dart';
 import 'package:fursancart/Ui/mainhome/trandingnow/trading_now.dart';
@@ -13,7 +14,7 @@ class Bottomnavigationbar extends StatefulWidget {
 }
 
 class _BottomnavigationbarState extends State<Bottomnavigationbar> {
-  final screens=[Home(),Trading_now(),Order(),Accounts()];
+  final screens=[Home(),Maincategory(),Order(),Accounts()];
   int  Currentindex=0;
 
   @override

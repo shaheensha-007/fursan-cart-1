@@ -1,5 +1,5 @@
-class TradingnowModelClass {
-  TradingnowModelClass({
+class TradingnowModel {
+  TradingnowModel({
       this.id, 
       this.createdAt, 
       this.updatedAt, 
@@ -26,7 +26,7 @@ class TradingnowModelClass {
       this.dicountAmount, 
       this.discPercent,});
 
-  TradingnowModelClass.fromJson(dynamic json) {
+  TradingnowModel.fromJson(dynamic json) {
     id = json['id'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
@@ -144,10 +144,10 @@ class TradingnowModelClass {
     map['discPercent'] = discPercent;
     return map;
   }
-  static List<TradingnowModelClass> listFromJson(List<dynamic> json) {
+  static List<TradingnowModel> listFromJson(List<dynamic> json) {
     return json == null
         ? []
-        : json.map((value) => TradingnowModelClass.fromJson(value)).toList();
+        : json.map((value) => TradingnowModel.fromJson(value)).toList();
   }
 }
 

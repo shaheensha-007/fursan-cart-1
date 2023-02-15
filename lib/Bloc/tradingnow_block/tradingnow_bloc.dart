@@ -14,14 +14,14 @@ part 'tradingnow_state.dart';
 
 class TradingnowBloc extends Bloc<TradingnowEvent, TradingnowState> {
 
-  late List<TradingnowModelClass> tradingnowModelClass;
+  late List<TradingnowModel> tradingnowModel;
   TradingApi tradingApi=TradingApi();
   TradingnowBloc() : super(TradingnowInitial()) {
     on<FetchTradingnowEvent>((event, emit) async{
       emit(TradingnowLoading());
       print('loading');
       try{
-        tradingnowModelClass=await tradingApi.trading();
+        tradingnowModel=await tradingApi.trading();
         emit(TradingnowblocLoaded());
         print('loaded');
       } catch(e){
