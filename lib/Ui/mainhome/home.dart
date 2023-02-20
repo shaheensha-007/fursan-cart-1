@@ -109,7 +109,7 @@ class _HomeState extends State<Home> {
               height:mheight*0.02,
             ),
          Container(
-           height: mheight*0.20,
+           height: mheight*0.1,
            width: mwidth,
            child: Choosebrand()
          ),

@@ -47,23 +47,27 @@ class _ChoosebrandState extends State<Choosebrand> {
         return ListView.builder(itemCount: choosebrand.length,scrollDirection: Axis.horizontal,
             itemBuilder: (BuildContext context, int index) {
 
-              return GestureDetector(
-                  onTap: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => Lg_company()));
-                  },
-                  child: Container(
-                    height: mheight * 0.20,
-                    width: mwidth * 0.20,
-                    decoration: BoxDecoration(
-                        image: DecorationImage(image: NetworkImage(
-                            basePath + "/brand/images/" + choosebrand![index]
-                                .image!.url.toString()),
-                          fit: BoxFit.cover,)
+              return Row(
+                children: [
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Lg_company()));
+                      },
+                      child: Container(
+                        height: mheight * 0.15,
+                        width: mwidth * 0.2,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(image: NetworkImage(
+                                basePath + "/brand/images/" + choosebrand![index]
+                                    .image!.url.toString()),
+                              fit: BoxFit.cover,)
 
-                    ),
+                        ),
 
-                  ));
+                      )),SizedBox(width: mwidth*0.02,)
+                ],
+              );
             });
         }else{return Container();} }
 );

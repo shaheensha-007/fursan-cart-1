@@ -5,7 +5,7 @@ import 'package:meta/meta.dart';
 
 import '../../Repository/api/trading-bestoffer-silder/tradingapi/tradingApi.dart';
 import '../../Repository/modelclass/TradingnowModelClass.dart';
-import '../../Repository/modelclass/TradingnowModelClass.dart';
+
 
 
 
