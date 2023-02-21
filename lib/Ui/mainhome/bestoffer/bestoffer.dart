@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fursancart/Ui/mainhome/Choosebrand.dart';
 
 import '../../../Bloc/slider_blok/slider_bloc.dart';
 import '../../../Repository/modelclass/BannerModelClass.dart';
@@ -54,7 +55,7 @@ class _BestofferState extends State<Bestoffer> {
         bestoffermodel = BlocProvider
             .of<SliderBloc>(context)
             .bestoffer;
-                return Container(
+                return choosebrand.isEmpty?Center(child: Text('No data'),): Container(
                     height: mheight * 0.20,
                     width: mwidth * 0.35,
                     color: Color(0xffEFEEEE),

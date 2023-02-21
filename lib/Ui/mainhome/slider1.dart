@@ -48,7 +48,7 @@ class _Slider1State extends State<Slider1> {
       return Stack(children: [
         ClipRRect(
             borderRadius: BorderRadius.circular(17),
-            child: CarouselSlider.builder(
+            child: slidermodel.isEmpty?Center(child: Text('No data'),):CarouselSlider.builder(
               itemCount: slidermodel.length,
               itemBuilder: (context,
                   index,

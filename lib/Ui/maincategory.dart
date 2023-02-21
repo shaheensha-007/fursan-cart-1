@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_expanded_tile/flutter_expanded_tile.dart';
+import 'package:fursancart/Repository/modelclass/maincategoryModelclass.dart';
+import 'package:fursancart/main.dart';
 
+import '../Bloc/maincategory/maincategory_bloc.dart';
 import 'mainhome/home.dart';
 
 class Maincategory extends StatefulWidget {
@@ -9,8 +13,14 @@ class Maincategory extends StatefulWidget {
   @override
   State<Maincategory> createState() => _MaincategoryState();
 }
-
+late List<MaincategoryModelclass> category;
 class _MaincategoryState extends State<Maincategory> {
+  @override
+  void initState() {
+    BlocProvider.of<MaincategoryBloc>(context).add(FetchMaincategoryEvent());
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     var mheight = MediaQuery.of(context).size.height;
@@ -53,7 +63,18 @@ class _MaincategoryState extends State<Maincategory> {
                 )),
           ],
         ),
-        body: ListView.builder(itemCount: 3,itemBuilder:(ctx,index){
+        body: BlocBuilder<MaincategoryBloc, MaincategoryState>(
+  builder: (context, state) {
+      if (state is MaincategoryblocLoading) {
+        print("loding");
+      }
+      if (state is MaincategoryblocError) {
+        print("error");
+      }
+      if (state is MaincategoryblocLoaded) {
+        category = BlocProvider.of<MaincategoryBloc>(context).category;
+        print("Loaded");
+    return ListView.builder(itemCount: category.length,itemBuilder:(ctx,index){
           return
           Card(
               elevation: 5,
@@ -71,8 +92,7 @@ class _MaincategoryState extends State<Maincategory> {
                       radius: 40,
                       child: Padding(
                           padding: const EdgeInsets.only(top: 15),
-                          child: Image.asset(
-                            'assets/kindpng_4225211 1.png',
+                          child: Image.network(basePath +"/category/images/"+category![index].image!.url.toString(),
                             fit: BoxFit.cover,
                           )),
                     ),
@@ -115,6 +135,7 @@ class _MaincategoryState extends State<Maincategory> {
                       ),
                     )
                   ]));}
-        ));
+        );
+  }else{return Container();}}));
   }
 }

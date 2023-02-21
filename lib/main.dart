@@ -14,6 +14,7 @@ import 'package:fursancart/Ui/mainhome/trandingnow/tadingproduct.dart';
 
 
 import 'Bloc/choosebrand/choosebrand_bloc.dart';
+import 'Bloc/maincategory/maincategory_bloc.dart';
 import 'Bloc/signup_block/signup_bloc.dart';
 import 'Bloc/tradingproduct_block/tradingproduct_bloc.dart';
 import 'Ui/openpage.dart';
@@ -36,7 +37,8 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context)=>SliderBloc()),
             BlocProvider(create: (context)=>TradingnowBloc()),
             BlocProvider(create: (context)=>ChoosebrandBloc()),
-            BlocProvider(create: (context)=>TradingproductBloc())
+            BlocProvider(create: (context)=>TradingproductBloc()),
+            BlocProvider(create:(context)=>MaincategoryBloc()),
 
     ],
           child: MaterialApp(
@@ -46,7 +48,7 @@ class MyApp extends StatelessWidget {
 
               primarySwatch: Colors.blue,
             ),
-            home: Bottomnavigationbar()
+            home:Bottomnavigationbar()
             ),
           );
   }
