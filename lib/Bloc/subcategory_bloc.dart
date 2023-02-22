@@ -10,15 +10,16 @@ part 'subcategory_event.dart';
 part 'subcategory_state.dart';
 
 class SubcategoryBloc extends Bloc<SubcategoryEvent, SubcategoryState> {
+  late List<SubcategoryModel> subcategory1;
+  SubcategoryApi subcategoryApi=SubcategoryApi();
   SubcategoryBloc() : super(SubcategoryInitial()) {
-    late List<SubcategoryModel> subcategory;
-    SubcategoryApi subcategoryApi=SubcategoryApi();
+
     on<SubcategoryEvent>((event, emit) async {
 
       emit(SubcategoryblocLoading());
       print('loading');
       try{
-        subcategory=(await  subcategoryApi.Maincategory()!;
+        subcategory1=await subcategoryApi.subcategory();
         emit(SubcategoryblocLoaded());
         print('loaded');
       }catch(e){

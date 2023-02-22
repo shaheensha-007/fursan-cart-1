@@ -157,12 +157,12 @@ class SubCategory {
   SubCategory.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
-    image = json['image'] != null ? Image.fromJson(json['image']) : null;
+    image = json['image'] != null ? Image1.fromJson(json['image']) : null;
     category = json['category'] != null ? Category.fromJson(json['category']) : null;
   }
   String? id;
   String? name;
-  Image? image;
+  Image1? image;
   Category? category;
 
   Map<String, dynamic> toJson() {
@@ -189,11 +189,11 @@ class Category {
   Category.fromJson(dynamic json) {
     id = json['id'];
     name = json['name'];
-    image = json['image'] != null ? Image.fromJson(json['image']) : null;
+    image = json['image'] != null ? Image1.fromJson(json['image']) : null;
   }
   String? id;
   String? name;
-  Image? image;
+  Image1? image;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -207,11 +207,11 @@ class Category {
 
 }
 
-class Image {
-  Image({
+class Image1 {
+  Image1({
       this.url,});
 
-  Image.fromJson(dynamic json) {
+  Image1.fromJson(dynamic json) {
     url = json['url'];
   }
   String? url;

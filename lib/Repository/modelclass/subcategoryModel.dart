@@ -15,7 +15,7 @@ class SubcategoryModel {
     name = json['name'];
     description = json['description'];
     catId = json['catId'];
-    image = json['image'] != null ? Image.fromJson(json['image']) : null;
+    image = json['image'] != null ? Image3.fromJson(json['image']) : null;
   }
   String? id;
   String? createdAt;
@@ -23,7 +23,7 @@ class SubcategoryModel {
   String? name;
   String? description;
   String? catId;
-  Image? image;
+  Image3? image;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
@@ -47,11 +47,11 @@ class SubcategoryModel {
 
 }
 
-class Image {
-  Image({
+class Image3 {
+  Image3({
       this.url,});
 
-  Image.fromJson(dynamic json) {
+  Image3.fromJson(dynamic json) {
     url = json['url'];
   }
   String? url;

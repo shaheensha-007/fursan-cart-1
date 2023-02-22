@@ -3,7 +3,7 @@ import 'dart:convert';
 
 import 'package:fursancart/Repository/modelclass/TradingnowModelClass.dart';
 import 'package:fursancart/Repository/modelclass/maincategoryModelclass.dart';
-import 'package:fursancart/Ui/maincategory.dart';
+import 'package:fursancart/Ui/maincategory/maincategory.dart';
 import 'package:http/http.dart';
 
 import '../../../../Ui/mainhome/Choosebrand.dart';

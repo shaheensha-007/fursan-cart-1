@@ -3,7 +3,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:fursancart/Repository/modelclass/maincategoryModelclass.dart';
-import 'package:fursancart/Ui/maincategory.dart';
+import 'package:fursancart/Ui/maincategory/maincategory.dart';
 import 'package:meta/meta.dart';
 
 import '../../Repository/api/MaincategoryApi/maincategoryApi.dart';

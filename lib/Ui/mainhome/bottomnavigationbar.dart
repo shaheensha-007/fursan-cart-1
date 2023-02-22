@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:fursancart/Ui/maincategory.dart';
+import 'package:fursancart/Ui/maincategory/maincategory.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';
 import 'package:fursancart/Ui/mainhome/order.dart';
 import 'package:fursancart/Ui/mainhome/trandingnow/trading_now.dart';
