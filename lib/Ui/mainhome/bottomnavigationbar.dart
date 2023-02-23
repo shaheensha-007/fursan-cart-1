@@ -6,14 +6,14 @@ import 'package:fursancart/Ui/mainhome/trandingnow/trading_now.dart';
 
 import 'accounts.dart';
 
-class Bottomnavigationbar extends StatefulWidget {
-  const Bottomnavigationbar({Key? key}) : super(key: key);
+class Bottomnavigationbar1 extends StatefulWidget {
+  const Bottomnavigationbar1({Key? key}) : super(key: key);
 
   @override
-  State<Bottomnavigationbar> createState() => _BottomnavigationbarState();
+  State<Bottomnavigationbar1> createState() => _Bottomnavigationbar1State();
 }
 
-class _BottomnavigationbarState extends State<Bottomnavigationbar> {
+class _Bottomnavigationbar1State extends State<Bottomnavigationbar1> {
   final screens=[Home(),Maincategory(),Order(),Accounts()];
   int  Currentindex=0;
 

@@ -7,7 +7,7 @@ import 'package:fursancart/Ui/maincategory/subcategory.dart';
 import 'package:fursancart/main.dart';
 
 import '../../Bloc/maincategory/maincategory_bloc.dart';
-import '../../Bloc/subcategory_bloc.dart';
+import '../../Bloc/subcategory/subcategory_bloc.dart';
 import '../../Repository/modelclass/subcategoryModel.dart';
 import '../mainhome/home.dart';
 

@@ -3,8 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
 
-import '../Repository/api/SubcategoryApi/subcategoryApi.dart';
-import '../Repository/modelclass/subcategoryModel.dart';
+import '../../Repository/api/SubcategoryApi/subcategoryApi.dart';
+import '../../Repository/modelclass/subcategoryModel.dart';
 
 part 'subcategory_event.dart';
 part 'subcategory_state.dart';

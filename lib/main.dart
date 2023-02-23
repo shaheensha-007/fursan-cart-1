@@ -17,7 +17,7 @@ import 'package:fursancart/Ui/mainhome/trandingnow/tadingproduct.dart';
 import 'Bloc/choosebrand/choosebrand_bloc.dart';
 import 'Bloc/maincategory/maincategory_bloc.dart';
 import 'Bloc/signup_block/signup_bloc.dart';
-import 'Bloc/subcategory_bloc.dart';
+import 'Bloc/subcategory/subcategory_bloc.dart';
 import 'Bloc/tradingproduct_block/tradingproduct_bloc.dart';
 import 'Ui/openpage.dart';
 import 'Ui/ordercart.dart';

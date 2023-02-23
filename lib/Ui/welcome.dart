@@ -42,7 +42,7 @@ class _WelcomeState extends State<Welcome> {
   listener: (context, state) {   if (state is welcomeblocLoaded) {
     print('loaded');
     Navigator.of(context).push(
-        MaterialPageRoute(builder: (a) =>  Bottomnavigationbar()));
+        MaterialPageRoute(builder: (a) =>  Bottomnavigationbar1()));
   }
   if (state is welcomeblocLoading) {
     print('loding');
