@@ -12,7 +12,7 @@ part 'ordercart_event.dart';
 part 'ordercart_state.dart';
 
 class OrdercartBloc extends Bloc<OrdercartEvent, OrdercartState> {
-  late List<OrdercartModel> Ordercart;
+  late List<OrdercartModel> Ordercart1;
   OrdercartApi ordercartApi=OrdercartApi();
   OrdercartBloc() : super(OrdercartInitial()) {
     on<OrdercartEvent>((event, emit) {
@@ -20,7 +20,7 @@ class OrdercartBloc extends Bloc<OrdercartEvent, OrdercartState> {
         emit(OrdercartblocLoading());
         print('loading');
         try{
-          Ordercart=await ordercartApi.Ordercart();
+          Ordercart1=await ordercartApi.Ordercart();
           emit(OrdercartblocLoaded());
           print('loaded');
         }catch(e){

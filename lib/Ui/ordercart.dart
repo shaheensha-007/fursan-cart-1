@@ -1,5 +1,9 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fursancart/Bloc/ordercartBloc/ordercart_bloc.dart';
+
+import '../Repository/modelclass/ordercartModel.dart';
 
 class Ordercart extends StatefulWidget {
   const Ordercart({Key? key}) : super(key: key);
@@ -7,8 +11,14 @@ class Ordercart extends StatefulWidget {
   @override
   State<Ordercart> createState() => _OrdercartState();
 }
-
+late List<OrdercartModel> Ordercart1;
 class _OrdercartState extends State<Ordercart> {
+  @override
+  void initState() {
+    BlocProvider.of<OrdercartBloc>(context).add(FetchOrdercartEvent());
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     var mheight = MediaQuery
@@ -19,7 +29,19 @@ class _OrdercartState extends State<Ordercart> {
         .of(context)
         .size
         .width;
-    return Scaffold(backgroundColor: Colors.white,
+    return BlocBuilder<OrdercartBloc, OrdercartState>(
+  builder: (context, state) {
+      if (state is OrdercartblocLoading) {
+        print("loding");
+      }
+      if (state is OrdercartblocError) {
+        print("error");
+      }
+      if (state is OrdercartblocLoaded) {
+        Ordercart1= BlocProvider.of<OrdercartBloc>(context).Ordercart1;
+        print("Loaded");
+
+        return Scaffold(backgroundColor: Colors.white,
      body: SingleChildScrollView(
        child: Column(
         children: [
@@ -117,6 +139,7 @@ class _OrdercartState extends State<Ordercart> {
             ],
             ),
           ),
+
           SizedBox(
             height: mheight*0.050,
           ),
@@ -228,6 +251,9 @@ class _OrdercartState extends State<Ordercart> {
         ],
     ),
      )
-    );
+        );
+  }return Container();
+    )
+
   }
 }

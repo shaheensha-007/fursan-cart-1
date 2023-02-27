@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fursancart/Bloc/ordercartBloc/ordercart_bloc.dart';
 import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
 import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Repository/modelclass/TradingnowModelClass.dart';
 import 'package:fursancart/Ui/maincategory/maincategory.dart';
+import 'package:fursancart/Ui/mainhome/accounts.dart';
 import 'package:fursancart/Ui/mainhome/bestoffer/bestofferproduct.dart';
 import 'package:fursancart/Ui/mainhome/bottomnavigationbar.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';
@@ -42,7 +44,8 @@ class MyApp extends StatelessWidget {
             BlocProvider(create: (context)=>ChoosebrandBloc()),
             BlocProvider(create: (context)=>TradingproductBloc()),
             BlocProvider(create:(context)=>MaincategoryBloc()),
-            BlocProvider(create: (context)=>SubcategoryBloc())   
+            BlocProvider(create: (context)=>SubcategoryBloc()),
+            BlocProvider(create: (context)=>OrdercartBloc()),
 
     ],
           child: MaterialApp(
@@ -52,7 +55,7 @@ class MyApp extends StatelessWidget {
 
               primarySwatch: Colors.blue,
             ),
-            home:Openpage()
+            home:Accounts()
             ),
           );
   }
