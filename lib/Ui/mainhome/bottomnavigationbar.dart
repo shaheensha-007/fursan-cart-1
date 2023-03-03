@@ -4,7 +4,7 @@ import 'package:fursancart/Ui/mainhome/home.dart';
 import 'package:fursancart/Ui/mainhome/order.dart';
 import 'package:fursancart/Ui/mainhome/trandingnow/trading_now.dart';
 
-import 'accounts.dart';
+import '../accounts/myaccounts.dart';
 
 class Bottomnavigationbar1 extends StatefulWidget {
   const Bottomnavigationbar1({Key? key}) : super(key: key);

@@ -6,7 +6,7 @@ import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Repository/modelclass/TradingnowModelClass.dart';
 import 'package:fursancart/Ui/maincategory/maincategory.dart';
-import 'package:fursancart/Ui/mainhome/accounts.dart';
+import 'package:fursancart/Ui/accounts/myaccounts.dart';
 import 'package:fursancart/Ui/mainhome/bestoffer/bestofferproduct.dart';
 import 'package:fursancart/Ui/mainhome/bottomnavigationbar.dart';
 import 'package:fursancart/Ui/mainhome/home.dart';

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fursancart/Ui/accounts/mgtaccount.dart';
 
 class Accounts extends StatefulWidget {
   const Accounts({Key? key}) : super(key: key);
@@ -211,7 +212,7 @@ class _AccountsState extends State<Accounts> {
                  SizedBox(
                    width: mwidth*0.10,
                  ),
-                 IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward_ios_outlined))
+                 IconButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder: (context)=>Mgtaccount()));}, icon: Icon(Icons.arrow_forward_ios_outlined))
                ],
              ),
            ),
