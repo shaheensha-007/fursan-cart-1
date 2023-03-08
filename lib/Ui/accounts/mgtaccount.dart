@@ -23,11 +23,33 @@ class _MgtaccountState extends State<Mgtaccount> {
             height: mheight*0.05,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.only(left:mwidth*0.05 ),
             child: Container(
-              height: mheight*0.06,
-              width: mwidth*0.500,
-              color: Colors.red,
+              height: mheight*0.08,
+              width: mwidth*0.650,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                border: Border.all(color: Colors.black)
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding:  EdgeInsets.only(left: mwidth*0.08),
+                    child: Text("9876543210",style: TextStyle(fontWeight: FontWeight.bold),),
+                  ),
+
+                  Padding(
+                    padding: EdgeInsets.only(left:mwidth*0.05 ),
+                    child: Image(image: AssetImage("assets/tik.png")),
+                  ),
+                  Padding(
+                    padding:  EdgeInsets.only(left: mwidth*0.20),
+                    child: IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
+                  ),
+
+                ],
+              ),
             ),
           )
         ],

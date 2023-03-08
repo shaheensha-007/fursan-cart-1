@@ -5,6 +5,7 @@ import 'package:fursancart/Bloc/slider_blok/slider_bloc.dart';
 import 'package:fursancart/Bloc/tradingnow_block/tradingnow_bloc.dart';
 import 'package:fursancart/Bloc/wlcome_block/welcome_bloc.dart';
 import 'package:fursancart/Repository/modelclass/TradingnowModelClass.dart';
+import 'package:fursancart/Ui/accounts/mgtaccount.dart';
 import 'package:fursancart/Ui/maincategory/maincategory.dart';
 import 'package:fursancart/Ui/accounts/myaccounts.dart';
 import 'package:fursancart/Ui/mainhome/bestoffer/bestofferproduct.dart';
@@ -55,7 +56,7 @@ class MyApp extends StatelessWidget {
 
               primarySwatch: Colors.blue,
             ),
-            home:Accounts()
+            home:Mgtaccount()
             ),
           );
   }
