@@ -26,7 +26,7 @@ class _MgtaccountState extends State<Mgtaccount> {
             padding:  EdgeInsets.only(left:mwidth*0.05 ),
             child: Container(
               height: mheight*0.08,
-              width: mwidth*0.650,
+              width: mwidth*0.900,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8),
                 border: Border.all(color: Colors.black)
@@ -41,17 +41,83 @@ class _MgtaccountState extends State<Mgtaccount> {
 
                   Padding(
                     padding: EdgeInsets.only(left:mwidth*0.05 ),
-                    child: Image(image: AssetImage("assets/tik.png")),
+                    child: Image(image: AssetImage("assets/tick.png")),
                   ),
                   Padding(
-                    padding:  EdgeInsets.only(left: mwidth*0.20),
+                    padding:  EdgeInsets.only(left: mwidth*0.30),
                     child: IconButton(onPressed: (){}, icon: Icon(Icons.edit)),
                   ),
 
                 ],
               ),
             ),
-          )
+          ),
+          SizedBox(
+            height: mheight*0.03,
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left: mwidth*0.06),
+            child: Container(
+              child: Center(
+                child: TextFormField(
+                    decoration: InputDecoration(
+                        focusedBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        hintText:'FULL NAME'
+
+                    )
+                ),
+              ),
+              width:mwidth*0.870,height:mheight*0.08,
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffEEEEEE), width: 2),
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: mheight*0.03,
+          ),
+          Padding(
+            padding:  EdgeInsets.only(left: mwidth*0.06),
+            child: Container(
+              child: Center(
+                child: TextFormField(
+                    decoration: InputDecoration(
+                        focusedBorder: InputBorder.none,
+                        disabledBorder: InputBorder.none,
+                        enabledBorder: InputBorder.none,
+                        hintText:'EMAIL'
+
+                    )
+                ),
+              ),
+              width:mwidth*0.870,height:mheight*0.08,
+              decoration: BoxDecoration(
+                border: Border.all(color: Color(0xffEEEEEE), width: 2),
+                borderRadius: BorderRadius.circular(8),
+              ),
+            ),
+          ),
+          SizedBox(
+            height: mheight*0.03,
+          ),
+          Padding(
+            padding: EdgeInsets.only(left: mwidth*0.06),
+            child: Container(
+              height: mheight*0.06,
+              width: mwidth*0.870,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(11),
+                border: Border.all(color: Colors.black),
+
+              ),
+              child: Center(child: TextButton(
+                  onPressed:(){},
+                  child: Text("CHAge PASSW",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),))),
+            ),
+          ),
         ],
       ),
     );
